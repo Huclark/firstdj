@@ -36,3 +36,15 @@ def surname(request):
         str: Returns the string, 'Hello, world!'
     """
     return HttpResponse("Hello, Vanderpuye!")
+
+def greet(request, name):
+    """Greets the user with whatever name the user provides
+
+    Args:
+        request (http): http request
+        name (str): name to address
+
+    Returns:
+        str: greetings
+    """
+    return HttpResponse(f"Hello, {name}!")
