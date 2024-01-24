@@ -4,5 +4,10 @@ from . import views
 # create a list of all the allowable urls that can be
 # accessed for this particular app
 urlpatterns = [
-    path("", views.index, name="index")
+    # default route represented by the empty string
+    path("", views.index, name="index"),
+    # this path loads huclark function
+    path("huclark", views.huclark, name="huclark"),
+    # this path loads the surname function
+    path("surname", views.surname, name="vanderpuye")
 ]
