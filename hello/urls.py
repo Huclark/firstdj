@@ -6,8 +6,10 @@ from . import views
 urlpatterns = [
     # default route represented by the empty string
     path("", views.index, name="index"),
+    # this path loads the greet function
+    path("<str:name>", views.greet, name="greet"),
     # this path loads huclark function
     path("huclark", views.huclark, name="huclark"),
     # this path loads the surname function
-    path("surname", views.surname, name="vanderpuye")
+    path("surname", views.surname, name="vanderpuye"),  
 ]
