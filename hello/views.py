@@ -12,3 +12,27 @@ def index(request):
     	str: Returns the string, 'Hello, world!'
 	"""
     return HttpResponse("Hello, world!")
+
+def huclark(request):
+    """Returns 'Hello, Huclark!' to the client
+
+    Args:
+        request (http): The HTTP request that the user made
+        in order to access our web server
+
+    Returns:
+        str: Returns the string, 'Hello, world!'
+    """
+    return HttpResponse("Hello, Huclark!")
+
+def surname(request):
+    """Returns 'Hello, Vanderpuye!' to the client
+
+    Args:
+        request (http): The HTTP request that the user made
+        in order to access our web server
+
+    Returns:
+        str: Returns the string, 'Hello, world!'
+    """
+    return HttpResponse("Hello, Vanderpuye!")
