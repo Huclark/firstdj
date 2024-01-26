@@ -11,7 +11,8 @@ def index(request):
     Returns:
     	str: Returns the string, 'Hello, world!'
 	"""
-    return HttpResponse("Hello, world!")
+    # return HttpResponse("Hello, world!")
+    return render(request, "hello/index.html")
 
 def huclark(request):
     """Returns 'Hello, Huclark!' to the client
@@ -47,4 +48,4 @@ def greet(request, name):
     Returns:
         str: greetings
     """
-    return HttpResponse(f"Hello, {name}!")
+    return HttpResponse(f"Hello, {name.capitalize()}!")
