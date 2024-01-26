@@ -48,4 +48,7 @@ def greet(request, name):
     Returns:
         str: greetings
     """
-    return HttpResponse(f"Hello, {name.capitalize()}!")
+    # return HttpResponse(f"Hello, {name.capitalize()}!")
+    return render(request, "hello/greet.html", {
+        "name": name.capitalize()
+    })
