@@ -3,6 +3,10 @@ from . import views
 
 # create a list of all the allowable urls that can be
 # accessed for this particular app
+# the 1st arg of path is the url the client is visiting
+# the 2nd arg is what view should be rendered when the url is visited
+# the 3rd arg(optional) is just to reference the url so that later
+# we can easily reference the url
 urlpatterns = [
     # default route represented by the empty string
     path("", views.index, name="index"),
