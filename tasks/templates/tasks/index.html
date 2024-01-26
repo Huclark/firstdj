@@ -1,0 +1,15 @@
+<!DOCTYPE>
+<html lang="en">
+    <head>
+        <title>Tasks</title>
+    </head>
+    <body>
+        {% comment %} create an unordered list {% endcomment %}
+        <ul>
+            {% comment %} loop through the list {% endcomment %}
+            {% for task in tasks %}
+                <li>{{ task }}</li>
+            {% endfor %}
+        </ul>
+    </body>
+</html>
