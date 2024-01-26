@@ -20,6 +20,8 @@ from django.urls import path, include
 urlpatterns = [
     # this is the admin path
     path('admin/', admin.site.urls),
-    # add the hello path to the project
+    # add the hello path to the 
+    # 2nd arg is telling django to look at the
+    # urls directory within the hello directory
     path('hello/', include("hello.urls"))
 ]
