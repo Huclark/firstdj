@@ -23,5 +23,6 @@ urlpatterns = [
     # add the hello path to the 
     # 2nd arg is telling django to look at the
     # urls directory within the hello directory
-    path('hello/', include("hello.urls"))
+    path('hello/', include("hello.urls")),
+    path('newyear/', include("newyear.urls"))
 ]
