@@ -8,3 +8,8 @@ def index(request):
     return render(request, "tasks/index.html", {
         "tasks": tasks
     })
+    
+def add(request):
+    """this takes new tasks without having a fixed list
+    """
+    return render(request, "tasks/add.html")
