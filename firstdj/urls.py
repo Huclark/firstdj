@@ -24,5 +24,8 @@ urlpatterns = [
     # 2nd arg is telling django to look at the
     # urls directory within the hello directory
     path('hello/', include("hello.urls")),
-    path('newyear/', include("newyear.urls"))
+    # add newyear app to path
+    path('newyear/', include("newyear.urls")),
+    # add tasks app to path
+    path('tasks/', include("tasks.urls"))
 ]
