@@ -18,6 +18,8 @@ from django.contrib import admin
 from django.urls import path, include
 
 urlpatterns = [
+    # this is the admin path
     path('admin/', admin.site.urls),
+    # add the hello path to the project
     path('hello/', include("hello.urls"))
 ]
