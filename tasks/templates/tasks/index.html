@@ -1,15 +1,21 @@
-<!DOCTYPE>
-<html lang="en">
-    <head>
-        <title>Tasks</title>
-    </head>
-    <body>
-        {% comment %} create an unordered list {% endcomment %}
-        <ul>
-            {% comment %} loop through the list {% endcomment %}
-            {% for task in tasks %}
-                <li>{{ task }}</li>
-            {% endfor %}
-        </ul>
-    </body>
-</html>
+{% extends "tasks/layout.html" %}
+{% comment %} The 1st line must always be the 1st line in the doc {% endcomment %}
+{% comment %} This is an implementation of template inheritance {% endcomment %}
+{% comment %} Take everything in layout.html {% endcomment %}
+
+{% comment %} Except the block body {% endcomment %}
+{% block body %}
+    <h1>Tasks</h1>
+    {% comment %} create an unordered list {% endcomment %}
+    <ul>
+        {% comment %} loop through the list {% endcomment %}
+        {% for task in tasks %}
+            <li>{{ task }}</li>
+        {% empty %}
+            <li>No Tasks.</li>
+        {% endfor %}
+    </ul>
+    {% comment %} This means from tasks get add {% endcomment %}
+    {% comment %} the 'add' there is the name you gave to the path in urls.py {% endcomment %}
+    <a href="{% url 'tasks:add' %}">Add a New Task</a>
+{% endblock %}
