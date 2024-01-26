@@ -1,13 +1,19 @@
-<!DOCTYPE>
-<html lang="en">
-    <head>
-        <title>Tasks</title>
-    </head>
-    <body>
-        <h1>Add Task</h1>
-        <form>
-            <input type="text" name="task">
-            <input type="submit">
-        </form>
-    </body>
-</html>
+{% extends "tasks/layout.html" %}
+{% comment %} The 1st line must always be the 1st line in the doc {% endcomment %}
+{% comment %} This is an implementation of template inheritance {% endcomment %}
+{% comment %} Take everything in layout.html {% endcomment %}
+
+{% comment %} Except the block body {% endcomment %}
+{% block body %}
+    <h1>Add Task</h1>
+    <form action="{% url 'tasks:add' %}" method="post">
+        {% comment %} Add the csrf token {% endcomment %}
+        {% csrf_token %}
+        {% comment %} This creates an input field instead of using input tags {% endcomment %}
+        {{ form }}
+        <input type="submit">
+    </form>
+    {% comment %} This means from tasks get index {% endcomment %}
+    {% comment %} the 'index' there is the name you gave to the path in urls.py {% endcomment %}
+    <a href="{% url 'tasks:index' %}">View Tasks</a>
+{% endblock %}
