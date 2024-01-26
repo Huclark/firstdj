@@ -9,6 +9,7 @@ from . import views
 # we can easily reference the url
 urlpatterns = [
     # default route represented by the empty string
+    # which loads the index function
     path("", views.index, name="index"),
     # this path loads the greet function
     path("<str:name>", views.greet, name="greet"),
